@@ -1,26 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.a.t02_widget2.MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:maxLines="1"
-        android:ellipsize="marquee"
-        android:typeface="normal"
-        android:textSize="70dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-       />
 
-    <Button
-        android:id="@+id/helloBtn"
-        android:text="hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:maxLines="1"
+                android:ellipsize="marquee"
+                android:typeface="normal"
+                android:textSize="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!"
+               />
+
+            <Button
+                android:id="@+id/helloBtn"
+                android:text="hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:id="@+id/myRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:checked="true"
+                    android:id="@+id/myRadio1"
+                    android:text="hello"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/myRadio2"
+                    android:text="world"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/myRadio3"
+                    android:text="android"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+            <CheckBox
+                android:checked="true"
+                android:text="Hello"
+                android:id="@+id/myCheckBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:checked="true"
+                android:text="wold"
+                android:id="@+id/myCheckBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/myEditText"
+                android:inputType="textEmailAddress"
+                android:hint="input name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:src="@drawable/lighthouse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
