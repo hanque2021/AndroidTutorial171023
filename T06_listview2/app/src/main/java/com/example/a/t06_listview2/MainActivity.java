@@ -1,11 +1,12 @@
 package com.example.a.t06_listview2;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -59,8 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
             TextView tvTitle = (TextView) convertView.findViewById(R.id.item_title);
             TextView tvDesc = (TextView) convertView.findViewById(R.id.item_desc);
+            ImageView itemIcon = convertView.findViewById(R.id.itemIcon);
+
             tvTitle.setText(myData.title);
             tvDesc.setText(myData.desc);
+            itemIcon.setImageResource(myData.itemIcon);
 
             return convertView;
         }
