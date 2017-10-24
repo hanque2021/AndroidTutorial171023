@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     Handler handler = new Handler() {
         @Override
         public void  handleMessage(Message msg){
-            //super.handleMessage(msg);
             //myButton.setText("count:"+msg.arg1);
             myProgressBar.setProgress(msg.arg1);
         }
