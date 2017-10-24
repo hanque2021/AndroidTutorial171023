@@ -16,12 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyActivity">
-        </activity>
+        <activity android:name=".MyActivity"></activity>
     </application>
 
-</manifest>
-<!--
+</manifest><!--
 .MAIN 부터 실행. intent-filter있을 경우 아래 부터 실행
 다른 activity추가한 intent-filter 삭제했음.
 -->
