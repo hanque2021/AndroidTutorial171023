@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,20 +27,26 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     Handler handler = new Handler() {
         @Override
         public void  handleMessage(Message msg){
             //super.handleMessage(msg);
-            myButton.setText("count:"+msg.arg1);
+            //myButton.setText("count:"+msg.arg1);
+            myProgressBar.setProgress(msg.arg1);
         }
 
     };
+
+    ProgressBar myProgressBar;
 
     Button myButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myProgressBar = (ProgressBar) findViewById(R.id.myProgressBar);
+
         myButton = (Button) findViewById(R.id.myButton);
 
         myButton.setOnClickListener(new View.OnClickListener() {
