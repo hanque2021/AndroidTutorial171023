@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             int value = integers[0];
             for(int i=value;i<100000;i++){
                 Log.d("asynctask", "count:"+i);
+                //textView.setText("count:"+i);
                 publishProgress((float)i);
             }
             //int b = integers[1]
