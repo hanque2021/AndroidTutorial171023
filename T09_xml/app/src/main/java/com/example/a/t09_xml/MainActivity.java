@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -13,12 +14,14 @@ import java.io.InputStream;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
+    TextView textView;
 
+    class  MyPullParser extends AsyncTask<String, Void, String>{
 
-    class  MyPullParser extends AsyncTask<String, Void, Void>{
+        String res ="";
 
         @Override
-        protected Void doInBackground(String... strings) {
+        protected String doInBackground(String... strings) {
 
             XmlPullParserFactory factory = null;
             try {
@@ -42,15 +45,11 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     }
-
                     eventType= xpp.next();
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
             return null;
         }
     }
