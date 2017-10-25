@@ -49,7 +49,7 @@ public class TestSQLiteHandler {
             String address = c.getString((c.getColumnIndex("address")));
 
             res +="id:"+id+" name:"+name+" age:"+age+" address: "+address;
-            res +="Wn";
+            res +="\n";
         }
 
         return res;
