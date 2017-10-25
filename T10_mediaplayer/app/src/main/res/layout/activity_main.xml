@@ -7,7 +7,11 @@
     android:orientation="vertical"
     tools:context="com.example.a.t10_mediaplayer.MainActivity">
 
-
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <Button
         android:onClick="onPlayClick"
         android:text="play"
