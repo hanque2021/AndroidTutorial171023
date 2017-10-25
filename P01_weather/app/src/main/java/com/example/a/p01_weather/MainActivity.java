@@ -3,7 +3,6 @@ package com.example.a.p01_weather;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +21,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    ListView listView;
+    MyAdapter adapter;
+
     class WeatherData{
         int day;
         int hour;
@@ -35,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            adapter.notifyDataSetChanged();
 
-
-            for(int i=0; i<weatherList.size(); i++){
-                Log.d("test", ""+weatherList.get(i).temp);
-            }
+            //for(int i=0; i<weatherList.size(); i++){
+            //    Log.d("test", ""+weatherList.get(i).temp);
+            //}
         }
 
         @Override
@@ -154,14 +156,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        ListView listView = (ListView) findViewById(R.id.listView);
-        MyAdapter adapter = new MyAdapter();
+        listView = (ListView) findViewById(R.id.listView);
+        adapter = new MyAdapter();
         listView.setAdapter(adapter);
         Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void onBtnClick(View v){
         MyPullParser task = new MyPullParser();
         task.execute("http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1153052000");
 
     }
+
 
 }
