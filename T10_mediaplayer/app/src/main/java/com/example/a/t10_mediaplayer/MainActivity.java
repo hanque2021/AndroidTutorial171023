@@ -6,7 +6,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
             requestPermissions(permissions,0);
         }
 
-        String path= Environment.getExternalStorageDirectory()+"Download";
+        String path= Environment.getExternalStorageDirectory()+"/Download";
         File dir = new File(path);
         final String[] files = dir.list();
 
-        for(int i=0;i<files.length;i++){
-           Log.d("files", files[i]);
-        }
+        //for(int i=0;i<files.length;i++){
+        //   Log.d("files", files[i]);
+       // }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,files);
 
         ListView listView = (ListView) findViewById(R.id.listView);
@@ -45,5 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 }
