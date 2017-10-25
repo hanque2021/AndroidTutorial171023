@@ -59,5 +59,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, listener);  //disable inspect 선택..
+       // manager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 0, 0, listener);  //disable inspect 선택..
+       // manager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, listener);  //disable inspect 선택..
     }
 }
