@@ -28,16 +28,22 @@
         android:text="0"    />
         <TableRow android:layout_weight="1">
             <Button
+                android:id="@+id/btnZero"
+                android:text="0"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 />
             <Button
+                android:id="@+id/btnOne"
+                android:text="1"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 />
             <Button
+                android:id="@+id/btnEnter"
+                android:text="enter"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
