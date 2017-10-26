@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageView imageView = (ImageView) findViewById(R.id.imageView);
-        String imagePath = "http://www.selphone.co.kr/homepage/img/team/3.jpg";
+        String imagePath = "http://cdn.podbbang.com/data1/programmer/programmer-iamprogram20161211.jpg";
         Glide.with(this).load(imagePath).into(imageView);
 
 
