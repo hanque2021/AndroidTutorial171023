@@ -5,9 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
     String str = "[{'name':'kim', 'tel':'010-1111-2222','age':20},"+
@@ -37,7 +42,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public  void  onBtnClick(View v){
-
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get("https://api.androidhive.info/contacts/",new JsonHttpResponseHandler(){
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        super.onSuccess(statusCode, headers, response);
+                        try {
+                            response.getJSONArray("contacts");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        //Log.d("json",response.toString());
+                    }
+                });
     }
 
 }
