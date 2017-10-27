@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                     fr = new BlankFragment();
                     FragmentTransaction tr = manager.beginTransaction();
                     tr.add(R.id.frame,fr,"counter");
+                    tr.addToBackStack(null);
                     tr.commit();
                 }
                 break;
@@ -42,10 +43,12 @@ public class MainActivity extends AppCompatActivity {
                     if(fr.getTag().equals("counter")){
                         TextFragment tf = new TextFragment();
                         tr.replace(R.id.frame,tf,"text");
+                        tr.addToBackStack(null);
                         tr.commit();
                     }else{
                         BlankFragment bf = new BlankFragment();
                         tr.replace(R.id.frame, bf,"counter");
+                        tr.addToBackStack(null);
                         tr.commit();
                     }
                 }
