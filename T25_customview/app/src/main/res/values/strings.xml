@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">T25_customview</string>
+    <string name="test">hello2</string>
 </resources>

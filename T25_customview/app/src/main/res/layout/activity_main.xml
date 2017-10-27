@@ -6,8 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.a.t25_customview.MainActivity">
+    <TextView
+        android:textSize="30sp"
+        android:text="@string/test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <com.example.a.t25_customview.BoxDrawingView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
 </LinearLayout>
